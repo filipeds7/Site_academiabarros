@@ -37,57 +37,36 @@ body {
 
     padding: 0 5.2%;
 
-    border-bottom: 1px solid #111;
+    border-bottom: 1px solid #151515;
 }
 
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.logo-placeholder {
-    width: 42px;
-    height: 48px;
+    height: 100%;
 
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    font-size: 31px;
-    font-weight: 900;
-
-    color: #ff5a00;
-
-    border-left: 3px solid #ffffff;
 }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
+.logo-image {
+    display: block;
 
-    line-height: 1;
-}
+    width: 285px;
+    height: auto;
 
-.logo-text strong {
-    font-size: 27px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
+    max-height: 64px;
 
-.logo-text span {
-    margin-top: 4px;
-
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: .5px;
+    object-fit: contain;
 }
 
 
-/* NAV LINKS */
+/* =========================
+   LINKS
+========================= */
 
 .nav-links {
     height: 100%;
@@ -107,12 +86,11 @@ body {
     align-items: center;
 
     color: #ffffff;
+
     text-decoration: none;
 
     font-size: 14px;
     font-weight: 800;
-
-    transition: color .2s ease;
 }
 
 .nav-links a:hover {
@@ -141,7 +119,7 @@ body {
 
 
 /* =========================
-   CARDS SECTION
+   CARDS
 ========================= */
 
 .cards-section {
@@ -160,17 +138,18 @@ body {
 }
 
 
-/* CARDS */
-
 .cards-container {
     width: 100%;
     max-width: 924px;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 12px;
 }
+
 
 .image-card {
     width: 100%;
@@ -185,27 +164,26 @@ body {
     background: #151515;
 }
 
-.image-placeholder {
+
+.image-card img {
     width: 100%;
     height: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
 
-    background: #242424;
+    object-fit: cover;
 
-    color: #777;
+    transition: transform .3s ease;
+}
 
-    font-size: 18px;
-    font-weight: 700;
 
-    letter-spacing: 1px;
+.image-card:hover img {
+    transform: scale(1.03);
 }
 
 
 /* =========================
-   ARROWS
+   SETAS
 ========================= */
 
 .card-arrow {
@@ -232,8 +210,6 @@ body {
     line-height: 1;
 
     cursor: pointer;
-
-    transition: color .2s ease;
 }
 
 .card-arrow:hover {
@@ -250,7 +226,7 @@ body {
 
 
 /* =========================
-   CAROUSEL DOTS
+   INDICADORES
 ========================= */
 
 .carousel-dots {
@@ -262,6 +238,7 @@ body {
     transform: translateX(-50%);
 
     display: flex;
+
     align-items: center;
 
     gap: 9px;
@@ -282,13 +259,52 @@ body {
 
 
 /* =========================
-   RESPONSIVE
+   GIFS
+========================= */
+
+.media-preview {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    padding: 30px 5%;
+}
+
+.media-card {
+    width: 300px;
+    height: 180px;
+
+    overflow: hidden;
+
+    border: 1px solid #222;
+}
+
+.media-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   RESPONSIVO
 ========================= */
 
 @media (max-width: 800px) {
 
     .navbar {
         padding: 0 20px;
+    }
+
+    .logo-image {
+        width: 210px;
     }
 
     .nav-links {
@@ -299,24 +315,8 @@ body {
         font-size: 11px;
     }
 
-    .logo-text strong {
-        font-size: 22px;
-    }
-
-    .logo-text span {
-        font-size: 7px;
-    }
-
-    .cards-container {
-        gap: 8px;
-    }
-
     .image-card {
         height: 135px;
-    }
-
-    .card-arrow {
-        font-size: 45px;
     }
 }
 
@@ -327,22 +327,8 @@ body {
         height: 65px;
     }
 
-    .nav-logo {
-        gap: 7px;
-    }
-
-    .logo-placeholder {
-        width: 30px;
-        height: 38px;
-        font-size: 23px;
-    }
-
-    .logo-text strong {
-        font-size: 17px;
-    }
-
-    .logo-text span {
-        font-size: 6px;
+    .logo-image {
+        width: 145px;
     }
 
     .nav-links {
@@ -360,6 +346,7 @@ body {
 
     .cards-section {
         height: 175px;
+
         padding: 0 28px;
     }
 
@@ -371,25 +358,17 @@ body {
         height: 115px;
     }
 
-    .image-placeholder {
-        font-size: 10px;
-    }
-
     .card-arrow {
-        width: 25px;
         font-size: 38px;
     }
 
-    .card-arrow.left {
-        left: 1px;
+    .media-preview {
+        gap: 8px;
+        padding: 20px;
     }
 
-    .card-arrow.right {
-        right: 1px;
-    }
-
-    .dot {
-        width: 7px;
-        height: 7px;
+    .media-card {
+        width: 50%;
+        height: 110px;
     }
 }
