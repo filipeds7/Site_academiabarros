@@ -76,3 +76,19 @@ const year = document.getElementById("year");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+
+// ================= WHATSAPP =================
+
+const whatsappNumber = "55SEUNUMERO";
+
+const whatsappMessage =
+  "Olá! Vim pelo site da Academia Barros e me interessei pelos planos. Gostaria de me inscrever!";
+
+const whatsappUrl =
+  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+document.querySelectorAll(".whatsapp-link").forEach(link => {
+  link.href = whatsappUrl;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+});
